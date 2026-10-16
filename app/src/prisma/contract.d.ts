@@ -18,9 +18,9 @@ import type {
 } from '@prisma/orm-postgres/contract/types';
 
 export type StorageHash =
-  StorageHashBase<'84b24de5666a6a3036ed2ac661d638d9b14f2e4fc4bc4c9f37c7e91dcd1a9c47'>;
+  StorageHashBase<'060a1fa90aba09e3fb3f04b48b6366fd46d7ccc12f54535f11f2205d40e5126e'>;
 export type ExecutionHash =
-  ExecutionHashBase<'2e24962f7328a854844a5fae9b9e01dc41426c3dfb78cac516e09e8877c60a23'>;
+  ExecutionHashBase<'ba8d5502c5c2d5c4044136dfdb1b5f23ab1c5f8cd4a5b2c8e0128a22083dd279'>;
 export type ProfileHash =
   ProfileHashBase<'3916f444a8a17ad749191acf9e08dad97d1a327b88c2f1d45d12f240296aa8b2'>;
 
@@ -234,30 +234,10 @@ type DefaultLiteralValue<CodecId extends string, Encoded> = CodecId extends keyo
 
 export type FieldOutputTypes = {
   readonly public: {
-    readonly CurrentStream: {
-      readonly id: CodecTypes['pg/text@1']['output'];
-      readonly spaceId: CodecTypes['pg/text@1']['output'] | null;
-      readonly streamId: CodecTypes['pg/text@1']['output'] | null;
-      readonly userId: CodecTypes['pg/text@1']['output'];
-    };
-    readonly Space: {
-      readonly hostId: CodecTypes['pg/text@1']['output'];
-      readonly id: CodecTypes['pg/text@1']['output'];
-      readonly isActive: CodecTypes['pg/bool@1']['output'];
-      readonly name: CodecTypes['pg/text@1']['output'];
-    };
     readonly Stream: {
       readonly active: CodecTypes['pg/bool@1']['output'];
-      readonly addedBy: CodecTypes['pg/text@1']['output'];
-      readonly bigImg: CodecTypes['pg/text@1']['output'];
-      readonly createAt: CodecTypes['pg/timestamptz-temporal@1']['output'];
       readonly extractedId: CodecTypes['pg/text@1']['output'];
       readonly id: CodecTypes['pg/text@1']['output'];
-      readonly played: CodecTypes['pg/bool@1']['output'];
-      readonly playedTs: CodecTypes['pg/timestamptz-temporal@1']['output'] | null;
-      readonly smallImg: CodecTypes['pg/text@1']['output'];
-      readonly spaceId: CodecTypes['pg/text@1']['output'] | null;
-      readonly title: CodecTypes['pg/text@1']['output'];
       readonly type: 'Spotify' | 'Youtube';
       readonly url: CodecTypes['pg/text@1']['output'];
       readonly userId: CodecTypes['pg/text@1']['output'];
@@ -268,40 +248,20 @@ export type FieldOutputTypes = {
       readonly userId: CodecTypes['pg/text@1']['output'];
     };
     readonly User: {
+      readonly createdAt: CodecTypes['pg/timestamptz-temporal@1']['output'];
       readonly email: CodecTypes['pg/text@1']['output'];
       readonly id: CodecTypes['pg/text@1']['output'];
-      readonly name: CodecTypes['pg/text@1']['output'] | null;
-      readonly password: CodecTypes['pg/text@1']['output'] | null;
-      readonly provider: 'Google' | 'Credentials';
+      readonly password: CodecTypes['pg/text@1']['output'];
+      readonly provider: 'Google';
     };
   };
 };
 export type FieldInputTypes = {
   readonly public: {
-    readonly CurrentStream: {
-      readonly id: CodecTypes['pg/text@1']['input'];
-      readonly spaceId: CodecTypes['pg/text@1']['input'] | null;
-      readonly streamId: CodecTypes['pg/text@1']['input'] | null;
-      readonly userId: CodecTypes['pg/text@1']['input'];
-    };
-    readonly Space: {
-      readonly hostId: CodecTypes['pg/text@1']['input'];
-      readonly id: CodecTypes['pg/text@1']['input'];
-      readonly isActive: CodecTypes['pg/bool@1']['input'];
-      readonly name: CodecTypes['pg/text@1']['input'];
-    };
     readonly Stream: {
       readonly active: CodecTypes['pg/bool@1']['input'];
-      readonly addedBy: CodecTypes['pg/text@1']['input'];
-      readonly bigImg: CodecTypes['pg/text@1']['input'];
-      readonly createAt: CodecTypes['pg/timestamptz-temporal@1']['input'];
       readonly extractedId: CodecTypes['pg/text@1']['input'];
       readonly id: CodecTypes['pg/text@1']['input'];
-      readonly played: CodecTypes['pg/bool@1']['input'];
-      readonly playedTs: CodecTypes['pg/timestamptz-temporal@1']['input'] | null;
-      readonly smallImg: CodecTypes['pg/text@1']['input'];
-      readonly spaceId: CodecTypes['pg/text@1']['input'] | null;
-      readonly title: CodecTypes['pg/text@1']['input'];
       readonly type: 'Spotify' | 'Youtube';
       readonly url: CodecTypes['pg/text@1']['input'];
       readonly userId: CodecTypes['pg/text@1']['input'];
@@ -312,40 +272,20 @@ export type FieldInputTypes = {
       readonly userId: CodecTypes['pg/text@1']['input'];
     };
     readonly User: {
+      readonly createdAt: CodecTypes['pg/timestamptz-temporal@1']['input'];
       readonly email: CodecTypes['pg/text@1']['input'];
       readonly id: CodecTypes['pg/text@1']['input'];
-      readonly name: CodecTypes['pg/text@1']['input'] | null;
-      readonly password: CodecTypes['pg/text@1']['input'] | null;
-      readonly provider: 'Google' | 'Credentials';
+      readonly password: CodecTypes['pg/text@1']['input'];
+      readonly provider: 'Google';
     };
   };
 };
 export type StorageColumnTypes = {
   readonly public: {
-    readonly CurrentStream: {
-      readonly id: CodecTypes['pg/text@1']['output'];
-      readonly spaceId: CodecTypes['pg/text@1']['output'] | null;
-      readonly streamId: CodecTypes['pg/text@1']['output'] | null;
-      readonly userId: CodecTypes['pg/text@1']['output'];
-    };
-    readonly Space: {
-      readonly hostId: CodecTypes['pg/text@1']['output'];
-      readonly id: CodecTypes['pg/text@1']['output'];
-      readonly isActive: CodecTypes['pg/bool@1']['output'];
-      readonly name: CodecTypes['pg/text@1']['output'];
-    };
     readonly Stream: {
       readonly active: CodecTypes['pg/bool@1']['output'];
-      readonly addedBy: CodecTypes['pg/text@1']['output'];
-      readonly bigImg: CodecTypes['pg/text@1']['output'];
-      readonly createAt: CodecTypes['pg/timestamptz-temporal@1']['output'];
       readonly extractedId: CodecTypes['pg/text@1']['output'];
       readonly id: CodecTypes['pg/text@1']['output'];
-      readonly played: CodecTypes['pg/bool@1']['output'];
-      readonly playedTs: CodecTypes['pg/timestamptz-temporal@1']['output'] | null;
-      readonly smallImg: CodecTypes['pg/text@1']['output'];
-      readonly spaceId: CodecTypes['pg/text@1']['output'] | null;
-      readonly title: CodecTypes['pg/text@1']['output'];
       readonly type: 'Spotify' | 'Youtube';
       readonly url: CodecTypes['pg/text@1']['output'];
       readonly userId: CodecTypes['pg/text@1']['output'];
@@ -356,40 +296,20 @@ export type StorageColumnTypes = {
       readonly userId: CodecTypes['pg/text@1']['output'];
     };
     readonly User: {
+      readonly createdAt: CodecTypes['pg/timestamptz-temporal@1']['output'];
       readonly email: CodecTypes['pg/text@1']['output'];
       readonly id: CodecTypes['pg/text@1']['output'];
-      readonly name: CodecTypes['pg/text@1']['output'] | null;
-      readonly password: CodecTypes['pg/text@1']['output'] | null;
-      readonly provider: 'Google' | 'Credentials';
+      readonly password: CodecTypes['pg/text@1']['output'];
+      readonly provider: 'Google';
     };
   };
 };
 export type StorageColumnInputTypes = {
   readonly public: {
-    readonly CurrentStream: {
-      readonly id: CodecTypes['pg/text@1']['input'];
-      readonly spaceId: CodecTypes['pg/text@1']['input'] | null;
-      readonly streamId: CodecTypes['pg/text@1']['input'] | null;
-      readonly userId: CodecTypes['pg/text@1']['input'];
-    };
-    readonly Space: {
-      readonly hostId: CodecTypes['pg/text@1']['input'];
-      readonly id: CodecTypes['pg/text@1']['input'];
-      readonly isActive: CodecTypes['pg/bool@1']['input'];
-      readonly name: CodecTypes['pg/text@1']['input'];
-    };
     readonly Stream: {
       readonly active: CodecTypes['pg/bool@1']['input'];
-      readonly addedBy: CodecTypes['pg/text@1']['input'];
-      readonly bigImg: CodecTypes['pg/text@1']['input'];
-      readonly createAt: CodecTypes['pg/timestamptz-temporal@1']['input'];
       readonly extractedId: CodecTypes['pg/text@1']['input'];
       readonly id: CodecTypes['pg/text@1']['input'];
-      readonly played: CodecTypes['pg/bool@1']['input'];
-      readonly playedTs: CodecTypes['pg/timestamptz-temporal@1']['input'] | null;
-      readonly smallImg: CodecTypes['pg/text@1']['input'];
-      readonly spaceId: CodecTypes['pg/text@1']['input'] | null;
-      readonly title: CodecTypes['pg/text@1']['input'];
       readonly type: 'Spotify' | 'Youtube';
       readonly url: CodecTypes['pg/text@1']['input'];
       readonly userId: CodecTypes['pg/text@1']['input'];
@@ -400,56 +320,26 @@ export type StorageColumnInputTypes = {
       readonly userId: CodecTypes['pg/text@1']['input'];
     };
     readonly User: {
+      readonly createdAt: CodecTypes['pg/timestamptz-temporal@1']['input'];
       readonly email: CodecTypes['pg/text@1']['input'];
       readonly id: CodecTypes['pg/text@1']['input'];
-      readonly name: CodecTypes['pg/text@1']['input'] | null;
-      readonly password: CodecTypes['pg/text@1']['input'] | null;
-      readonly provider: 'Google' | 'Credentials';
+      readonly password: CodecTypes['pg/text@1']['input'];
+      readonly provider: 'Google';
     };
   };
 };
 
 export namespace Models {
-  export type public_CurrentStream = {
-    id: CodecTypes['pg/text@1']['output'];
-    spaceId: CodecTypes['pg/text@1']['output'] | null;
-    streamId: CodecTypes['pg/text@1']['output'] | null;
-    userId: CodecTypes['pg/text@1']['output'];
-    space: public_Space | null;
-    stream: public_Stream | null;
-    readonly [RelationKeys]?: 'space' | 'stream';
-  };
-  export type public_Space = {
-    hostId: CodecTypes['pg/text@1']['output'];
-    id: CodecTypes['pg/text@1']['output'];
-    isActive: CodecTypes['pg/bool@1']['output'];
-    name: CodecTypes['pg/text@1']['output'];
-    currentStream: public_CurrentStream | null;
-    host: public_User;
-    streams: public_Stream[];
-    readonly [RelationKeys]?: 'currentStream' | 'host' | 'streams';
-  };
   export type public_Stream = {
     active: CodecTypes['pg/bool@1']['output'];
-    addedBy: CodecTypes['pg/text@1']['output'];
-    bigImg: CodecTypes['pg/text@1']['output'];
-    createAt: CodecTypes['pg/timestamptz-temporal@1']['output'];
     extractedId: CodecTypes['pg/text@1']['output'];
     id: CodecTypes['pg/text@1']['output'];
-    played: CodecTypes['pg/bool@1']['output'];
-    playedTs: CodecTypes['pg/timestamptz-temporal@1']['output'] | null;
-    smallImg: CodecTypes['pg/text@1']['output'];
-    spaceId: CodecTypes['pg/text@1']['output'] | null;
-    title: CodecTypes['pg/text@1']['output'];
     type: 'Spotify' | 'Youtube';
     url: CodecTypes['pg/text@1']['output'];
     userId: CodecTypes['pg/text@1']['output'];
-    addedByUser: public_User;
-    currentStream: public_CurrentStream | null;
-    space: public_Space | null;
     upvotes: public_Upvote[];
     user: public_User;
-    readonly [RelationKeys]?: 'addedByUser' | 'currentStream' | 'space' | 'upvotes' | 'user';
+    readonly [RelationKeys]?: 'upvotes' | 'user';
   };
   export type public_Upvote = {
     id: CodecTypes['pg/text@1']['output'];
@@ -460,23 +350,19 @@ export namespace Models {
     readonly [RelationKeys]?: 'stream' | 'user';
   };
   export type public_User = {
+    createdAt: CodecTypes['pg/timestamptz-temporal@1']['output'];
     email: CodecTypes['pg/text@1']['output'];
     id: CodecTypes['pg/text@1']['output'];
-    name: CodecTypes['pg/text@1']['output'] | null;
-    password: CodecTypes['pg/text@1']['output'] | null;
-    provider: 'Google' | 'Credentials';
-    addedStreams: public_Stream[];
-    hostedSpaces: public_Space[];
+    password: CodecTypes['pg/text@1']['output'];
+    provider: 'Google';
     streams: public_Stream[];
     upvotes: public_Upvote[];
-    readonly [RelationKeys]?: 'addedStreams' | 'hostedSpaces' | 'streams' | 'upvotes';
+    readonly [RelationKeys]?: 'streams' | 'upvotes';
   };
 }
 
 export declare const models: {
   public: {
-    CurrentStream: Models.public_CurrentStream;
-    Space: Models.public_Space;
     Stream: Models.public_Stream;
     Upvote: Models.public_Upvote;
     User: Models.public_User;
@@ -501,122 +387,6 @@ type ContractBase = Omit<
         readonly kind: 'postgres-schema';
         readonly entries: {
           readonly table: {
-            readonly CurrentStream: {
-              columns: {
-                readonly id: {
-                  readonly dataType: 'pg/text';
-                  readonly codecId: 'pg/text@1';
-                  readonly nullable: false;
-                  readonly many: false;
-                };
-                readonly spaceId: {
-                  readonly dataType: 'pg/text';
-                  readonly codecId: 'pg/text@1';
-                  readonly nullable: true;
-                  readonly many: false;
-                };
-                readonly streamId: {
-                  readonly dataType: 'pg/text';
-                  readonly codecId: 'pg/text@1';
-                  readonly nullable: true;
-                  readonly many: false;
-                };
-                readonly userId: {
-                  readonly dataType: 'pg/text';
-                  readonly codecId: 'pg/text@1';
-                  readonly nullable: false;
-                  readonly many: false;
-                };
-              };
-              primaryKey: { readonly columns: readonly ['id'] };
-              uniques: readonly [
-                { readonly columns: readonly ['streamId'] },
-                { readonly columns: readonly ['spaceId'] },
-              ];
-              indexes: readonly [];
-              foreignKeys: readonly [
-                {
-                  readonly source: {
-                    readonly namespaceId: 'public' & NamespaceId;
-                    readonly tableName: 'CurrentStream';
-                    readonly columns: readonly ['streamId'];
-                  };
-                  readonly target: {
-                    readonly namespaceId: 'public' & NamespaceId;
-                    readonly tableName: 'Stream';
-                    readonly columns: readonly ['id'];
-                  };
-                },
-                {
-                  readonly source: {
-                    readonly namespaceId: 'public' & NamespaceId;
-                    readonly tableName: 'CurrentStream';
-                    readonly columns: readonly ['spaceId'];
-                  };
-                  readonly target: {
-                    readonly namespaceId: 'public' & NamespaceId;
-                    readonly tableName: 'Space';
-                    readonly columns: readonly ['id'];
-                  };
-                },
-              ];
-            };
-            readonly Space: {
-              columns: {
-                readonly hostId: {
-                  readonly dataType: 'pg/text';
-                  readonly codecId: 'pg/text@1';
-                  readonly nullable: false;
-                  readonly many: false;
-                };
-                readonly id: {
-                  readonly dataType: 'pg/text';
-                  readonly codecId: 'pg/text@1';
-                  readonly nullable: false;
-                  readonly many: false;
-                };
-                readonly isActive: {
-                  readonly dataType: 'pg/bool';
-                  readonly codecId: 'pg/bool@1';
-                  readonly nullable: false;
-                  readonly default: {
-                    readonly kind: 'literal';
-                    readonly value: DefaultLiteralValue<'pg/bool@1', true>;
-                  };
-                  readonly many: false;
-                };
-                readonly name: {
-                  readonly dataType: 'pg/text';
-                  readonly codecId: 'pg/text@1';
-                  readonly nullable: false;
-                  readonly many: false;
-                };
-              };
-              primaryKey: { readonly columns: readonly ['id'] };
-              uniques: readonly [];
-              indexes: readonly [
-                {
-                  readonly name: 'Space_hostId_idx_05205577';
-                  readonly prefix: 'Space_hostId_idx';
-                  readonly columns: readonly ['hostId'];
-                  readonly unique: false;
-                },
-              ];
-              foreignKeys: readonly [
-                {
-                  readonly source: {
-                    readonly namespaceId: 'public' & NamespaceId;
-                    readonly tableName: 'Space';
-                    readonly columns: readonly ['hostId'];
-                  };
-                  readonly target: {
-                    readonly namespaceId: 'public' & NamespaceId;
-                    readonly tableName: 'User';
-                    readonly columns: readonly ['id'];
-                  };
-                },
-              ];
-            };
             readonly Stream: {
               columns: {
                 readonly active: {
@@ -629,29 +399,6 @@ type ContractBase = Omit<
                   };
                   readonly many: false;
                 };
-                readonly addedBy: {
-                  readonly dataType: 'pg/text';
-                  readonly codecId: 'pg/text@1';
-                  readonly nullable: false;
-                  readonly many: false;
-                };
-                readonly bigImg: {
-                  readonly dataType: 'pg/text';
-                  readonly codecId: 'pg/text@1';
-                  readonly nullable: false;
-                  readonly default: {
-                    readonly kind: 'literal';
-                    readonly value: DefaultLiteralValue<'pg/text@1', ''>;
-                  };
-                  readonly many: false;
-                };
-                readonly createAt: {
-                  readonly dataType: 'pg/timestamptz';
-                  readonly codecId: 'pg/timestamptz-temporal@1';
-                  readonly nullable: false;
-                  readonly default: { readonly kind: 'function'; readonly expression: 'now()' };
-                  readonly many: false;
-                };
                 readonly extractedId: {
                   readonly dataType: 'pg/text';
                   readonly codecId: 'pg/text@1';
@@ -662,48 +409,6 @@ type ContractBase = Omit<
                   readonly dataType: 'pg/text';
                   readonly codecId: 'pg/text@1';
                   readonly nullable: false;
-                  readonly many: false;
-                };
-                readonly played: {
-                  readonly dataType: 'pg/bool';
-                  readonly codecId: 'pg/bool@1';
-                  readonly nullable: false;
-                  readonly default: {
-                    readonly kind: 'literal';
-                    readonly value: DefaultLiteralValue<'pg/bool@1', false>;
-                  };
-                  readonly many: false;
-                };
-                readonly playedTs: {
-                  readonly dataType: 'pg/timestamptz';
-                  readonly codecId: 'pg/timestamptz-temporal@1';
-                  readonly nullable: true;
-                  readonly many: false;
-                };
-                readonly smallImg: {
-                  readonly dataType: 'pg/text';
-                  readonly codecId: 'pg/text@1';
-                  readonly nullable: false;
-                  readonly default: {
-                    readonly kind: 'literal';
-                    readonly value: DefaultLiteralValue<'pg/text@1', ''>;
-                  };
-                  readonly many: false;
-                };
-                readonly spaceId: {
-                  readonly dataType: 'pg/text';
-                  readonly codecId: 'pg/text@1';
-                  readonly nullable: true;
-                  readonly many: false;
-                };
-                readonly title: {
-                  readonly dataType: 'pg/text';
-                  readonly codecId: 'pg/text@1';
-                  readonly nullable: false;
-                  readonly default: {
-                    readonly kind: 'literal';
-                    readonly value: DefaultLiteralValue<'pg/text@1', ''>;
-                  };
                   readonly many: false;
                 };
                 readonly type: {
@@ -729,18 +434,6 @@ type ContractBase = Omit<
               uniques: readonly [];
               indexes: readonly [
                 {
-                  readonly name: 'Stream_addedBy_idx_2b119622';
-                  readonly prefix: 'Stream_addedBy_idx';
-                  readonly columns: readonly ['addedBy'];
-                  readonly unique: false;
-                },
-                {
-                  readonly name: 'Stream_spaceId_idx_bb21015f';
-                  readonly prefix: 'Stream_spaceId_idx';
-                  readonly columns: readonly ['spaceId'];
-                  readonly unique: false;
-                },
-                {
                   readonly name: 'Stream_userId_idx_a489d58a';
                   readonly prefix: 'Stream_userId_idx';
                   readonly columns: readonly ['userId'];
@@ -757,30 +450,6 @@ type ContractBase = Omit<
                   readonly target: {
                     readonly namespaceId: 'public' & NamespaceId;
                     readonly tableName: 'User';
-                    readonly columns: readonly ['id'];
-                  };
-                },
-                {
-                  readonly source: {
-                    readonly namespaceId: 'public' & NamespaceId;
-                    readonly tableName: 'Stream';
-                    readonly columns: readonly ['addedBy'];
-                  };
-                  readonly target: {
-                    readonly namespaceId: 'public' & NamespaceId;
-                    readonly tableName: 'User';
-                    readonly columns: readonly ['id'];
-                  };
-                },
-                {
-                  readonly source: {
-                    readonly namespaceId: 'public' & NamespaceId;
-                    readonly tableName: 'Stream';
-                    readonly columns: readonly ['spaceId'];
-                  };
-                  readonly target: {
-                    readonly namespaceId: 'public' & NamespaceId;
-                    readonly tableName: 'Space';
                     readonly columns: readonly ['id'];
                   };
                 },
@@ -852,6 +521,13 @@ type ContractBase = Omit<
             };
             readonly User: {
               columns: {
+                readonly createdAt: {
+                  readonly dataType: 'pg/timestamptz';
+                  readonly codecId: 'pg/timestamptz-temporal@1';
+                  readonly nullable: false;
+                  readonly default: { readonly kind: 'function'; readonly expression: 'now()' };
+                  readonly many: false;
+                };
                 readonly email: {
                   readonly dataType: 'pg/text';
                   readonly codecId: 'pg/text@1';
@@ -864,16 +540,10 @@ type ContractBase = Omit<
                   readonly nullable: false;
                   readonly many: false;
                 };
-                readonly name: {
-                  readonly dataType: 'pg/text';
-                  readonly codecId: 'pg/text@1';
-                  readonly nullable: true;
-                  readonly many: false;
-                };
                 readonly password: {
                   readonly dataType: 'pg/text';
                   readonly codecId: 'pg/text@1';
-                  readonly nullable: true;
+                  readonly nullable: false;
                   readonly many: false;
                 };
                 readonly provider: {
@@ -890,10 +560,7 @@ type ContractBase = Omit<
             };
           };
           readonly valueSet: {
-            readonly Provider: {
-              readonly kind: 'valueSet';
-              readonly values: readonly ['Google', 'Credentials'];
-            };
+            readonly Provider: { readonly kind: 'valueSet'; readonly values: readonly ['Google'] };
             readonly StreamType: {
               readonly kind: 'valueSet';
               readonly values: readonly ['Spotify', 'Youtube'];
@@ -909,11 +576,6 @@ type ContractBase = Omit<
   readonly target: 'postgres';
   readonly targetFamily: 'sql';
   readonly roots: {
-    readonly CurrentStream: {
-      readonly namespace: 'public' & NamespaceId;
-      readonly model: 'CurrentStream';
-    };
-    readonly Space: { readonly namespace: 'public' & NamespaceId; readonly model: 'Space' };
     readonly Stream: { readonly namespace: 'public' & NamespaceId; readonly model: 'Stream' };
     readonly Upvote: { readonly namespace: 'public' & NamespaceId; readonly model: 'Upvote' };
     readonly User: { readonly namespace: 'public' & NamespaceId; readonly model: 'User' };
@@ -922,175 +584,17 @@ type ContractBase = Omit<
     readonly namespaces: {
       readonly public: {
         readonly models: {
-          readonly CurrentStream: {
-            readonly fields: {
-              readonly id: {
-                readonly nullable: false;
-                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
-              };
-              readonly spaceId: {
-                readonly nullable: true;
-                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
-              };
-              readonly streamId: {
-                readonly nullable: true;
-                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
-              };
-              readonly userId: {
-                readonly nullable: false;
-                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
-              };
-            };
-            readonly relations: {
-              readonly space: {
-                readonly to: {
-                  readonly namespace: 'public' & NamespaceId;
-                  readonly model: 'Space';
-                };
-                readonly cardinality: 'N:1';
-                readonly nullable: true;
-                readonly on: {
-                  readonly localFields: readonly ['spaceId'];
-                  readonly targetFields: readonly ['id'];
-                };
-              };
-              readonly stream: {
-                readonly to: {
-                  readonly namespace: 'public' & NamespaceId;
-                  readonly model: 'Stream';
-                };
-                readonly cardinality: 'N:1';
-                readonly nullable: true;
-                readonly on: {
-                  readonly localFields: readonly ['streamId'];
-                  readonly targetFields: readonly ['id'];
-                };
-              };
-            };
-            readonly storage: {
-              readonly table: 'CurrentStream';
-              readonly namespaceId: 'public';
-              readonly fields: {
-                readonly id: { readonly column: 'id' };
-                readonly spaceId: { readonly column: 'spaceId' };
-                readonly streamId: { readonly column: 'streamId' };
-                readonly userId: { readonly column: 'userId' };
-              };
-            };
-          };
-          readonly Space: {
-            readonly fields: {
-              readonly hostId: {
-                readonly nullable: false;
-                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
-              };
-              readonly id: {
-                readonly nullable: false;
-                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
-              };
-              readonly isActive: {
-                readonly nullable: false;
-                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/bool@1' };
-              };
-              readonly name: {
-                readonly nullable: false;
-                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
-              };
-            };
-            readonly relations: {
-              readonly currentStream: {
-                readonly to: {
-                  readonly namespace: 'public' & NamespaceId;
-                  readonly model: 'CurrentStream';
-                };
-                readonly cardinality: '1:1';
-                readonly nullable: true;
-                readonly on: {
-                  readonly localFields: readonly ['id'];
-                  readonly targetFields: readonly ['spaceId'];
-                };
-              };
-              readonly host: {
-                readonly to: { readonly namespace: 'public' & NamespaceId; readonly model: 'User' };
-                readonly cardinality: 'N:1';
-                readonly nullable: false;
-                readonly on: {
-                  readonly localFields: readonly ['hostId'];
-                  readonly targetFields: readonly ['id'];
-                };
-              };
-              readonly streams: {
-                readonly to: {
-                  readonly namespace: 'public' & NamespaceId;
-                  readonly model: 'Stream';
-                };
-                readonly cardinality: '1:N';
-                readonly on: {
-                  readonly localFields: readonly ['id'];
-                  readonly targetFields: readonly ['spaceId'];
-                };
-              };
-            };
-            readonly storage: {
-              readonly table: 'Space';
-              readonly namespaceId: 'public';
-              readonly fields: {
-                readonly hostId: { readonly column: 'hostId' };
-                readonly id: { readonly column: 'id' };
-                readonly isActive: { readonly column: 'isActive' };
-                readonly name: { readonly column: 'name' };
-              };
-            };
-          };
           readonly Stream: {
             readonly fields: {
               readonly active: {
                 readonly nullable: false;
                 readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/bool@1' };
               };
-              readonly addedBy: {
-                readonly nullable: false;
-                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
-              };
-              readonly bigImg: {
-                readonly nullable: false;
-                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
-              };
-              readonly createAt: {
-                readonly nullable: false;
-                readonly type: {
-                  readonly kind: 'scalar';
-                  readonly codecId: 'pg/timestamptz-temporal@1';
-                };
-              };
               readonly extractedId: {
                 readonly nullable: false;
                 readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
               };
               readonly id: {
-                readonly nullable: false;
-                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
-              };
-              readonly played: {
-                readonly nullable: false;
-                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/bool@1' };
-              };
-              readonly playedTs: {
-                readonly nullable: true;
-                readonly type: {
-                  readonly kind: 'scalar';
-                  readonly codecId: 'pg/timestamptz-temporal@1';
-                };
-              };
-              readonly smallImg: {
-                readonly nullable: false;
-                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
-              };
-              readonly spaceId: {
-                readonly nullable: true;
-                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
-              };
-              readonly title: {
                 readonly nullable: false;
                 readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
               };
@@ -1108,39 +612,6 @@ type ContractBase = Omit<
               };
             };
             readonly relations: {
-              readonly addedByUser: {
-                readonly to: { readonly namespace: 'public' & NamespaceId; readonly model: 'User' };
-                readonly cardinality: 'N:1';
-                readonly nullable: false;
-                readonly on: {
-                  readonly localFields: readonly ['addedBy'];
-                  readonly targetFields: readonly ['id'];
-                };
-              };
-              readonly currentStream: {
-                readonly to: {
-                  readonly namespace: 'public' & NamespaceId;
-                  readonly model: 'CurrentStream';
-                };
-                readonly cardinality: '1:1';
-                readonly nullable: true;
-                readonly on: {
-                  readonly localFields: readonly ['id'];
-                  readonly targetFields: readonly ['streamId'];
-                };
-              };
-              readonly space: {
-                readonly to: {
-                  readonly namespace: 'public' & NamespaceId;
-                  readonly model: 'Space';
-                };
-                readonly cardinality: 'N:1';
-                readonly nullable: true;
-                readonly on: {
-                  readonly localFields: readonly ['spaceId'];
-                  readonly targetFields: readonly ['id'];
-                };
-              };
               readonly upvotes: {
                 readonly to: {
                   readonly namespace: 'public' & NamespaceId;
@@ -1167,16 +638,8 @@ type ContractBase = Omit<
               readonly namespaceId: 'public';
               readonly fields: {
                 readonly active: { readonly column: 'active' };
-                readonly addedBy: { readonly column: 'addedBy' };
-                readonly bigImg: { readonly column: 'bigImg' };
-                readonly createAt: { readonly column: 'createAt' };
                 readonly extractedId: { readonly column: 'extractedId' };
                 readonly id: { readonly column: 'id' };
-                readonly played: { readonly column: 'played' };
-                readonly playedTs: { readonly column: 'playedTs' };
-                readonly smallImg: { readonly column: 'smallImg' };
-                readonly spaceId: { readonly column: 'spaceId' };
-                readonly title: { readonly column: 'title' };
                 readonly type: { readonly column: 'type' };
                 readonly url: { readonly column: 'url' };
                 readonly userId: { readonly column: 'userId' };
@@ -1233,6 +696,13 @@ type ContractBase = Omit<
           };
           readonly User: {
             readonly fields: {
+              readonly createdAt: {
+                readonly nullable: false;
+                readonly type: {
+                  readonly kind: 'scalar';
+                  readonly codecId: 'pg/timestamptz-temporal@1';
+                };
+              };
               readonly email: {
                 readonly nullable: false;
                 readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
@@ -1241,12 +711,8 @@ type ContractBase = Omit<
                 readonly nullable: false;
                 readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
               };
-              readonly name: {
-                readonly nullable: true;
-                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
-              };
               readonly password: {
-                readonly nullable: true;
+                readonly nullable: false;
                 readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
               };
               readonly provider: {
@@ -1255,28 +721,6 @@ type ContractBase = Omit<
               };
             };
             readonly relations: {
-              readonly addedStreams: {
-                readonly to: {
-                  readonly namespace: 'public' & NamespaceId;
-                  readonly model: 'Stream';
-                };
-                readonly cardinality: '1:N';
-                readonly on: {
-                  readonly localFields: readonly ['id'];
-                  readonly targetFields: readonly ['addedBy'];
-                };
-              };
-              readonly hostedSpaces: {
-                readonly to: {
-                  readonly namespace: 'public' & NamespaceId;
-                  readonly model: 'Space';
-                };
-                readonly cardinality: '1:N';
-                readonly on: {
-                  readonly localFields: readonly ['id'];
-                  readonly targetFields: readonly ['hostId'];
-                };
-              };
               readonly streams: {
                 readonly to: {
                   readonly namespace: 'public' & NamespaceId;
@@ -1304,9 +748,9 @@ type ContractBase = Omit<
               readonly table: 'User';
               readonly namespaceId: 'public';
               readonly fields: {
+                readonly createdAt: { readonly column: 'createdAt' };
                 readonly email: { readonly column: 'email' };
                 readonly id: { readonly column: 'id' };
-                readonly name: { readonly column: 'name' };
                 readonly password: { readonly column: 'password' };
                 readonly provider: { readonly column: 'provider' };
               };
@@ -1316,10 +760,7 @@ type ContractBase = Omit<
         readonly enum: {
           readonly Provider: {
             readonly codecId: 'pg/text@1';
-            readonly members: readonly [
-              { readonly name: 'Google'; readonly value: 'Google' },
-              { readonly name: 'Credentials'; readonly value: 'Credentials' },
-            ];
+            readonly members: readonly [{ readonly name: 'Google'; readonly value: 'Google' }];
           };
           readonly StreamType: {
             readonly codecId: 'pg/text@1';
@@ -1330,10 +771,7 @@ type ContractBase = Omit<
           };
         };
         readonly enumMemberTypes?: {
-          readonly Provider: readonly [
-            { readonly name: 'Google'; readonly value: 'Google' },
-            { readonly name: 'Credentials'; readonly value: 'Credentials' },
-          ];
+          readonly Provider: readonly [{ readonly name: 'Google'; readonly value: 'Google' }];
           readonly StreamType: readonly [
             { readonly name: 'Spotify'; readonly value: 'Spotify' },
             { readonly name: 'Youtube'; readonly value: 'Youtube' },
@@ -1374,22 +812,6 @@ type ContractBase = Omit<
     readonly executionHash: ExecutionHash;
     readonly mutations: {
       readonly defaults: readonly [
-        {
-          readonly onCreate: { readonly id: 'uuidv4'; readonly kind: 'generator' };
-          readonly ref: {
-            readonly entry: 'CurrentStream';
-            readonly field: 'id';
-            readonly namespace: 'public';
-          };
-        },
-        {
-          readonly onCreate: { readonly id: 'uuidv4'; readonly kind: 'generator' };
-          readonly ref: {
-            readonly entry: 'Space';
-            readonly field: 'id';
-            readonly namespace: 'public';
-          };
-        },
         {
           readonly onCreate: { readonly id: 'uuidv4'; readonly kind: 'generator' };
           readonly ref: {

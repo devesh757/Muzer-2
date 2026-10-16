@@ -4,14 +4,6 @@
   "target": "postgres",
   "profileHash": "3916f444a8a17ad749191acf9e08dad97d1a327b88c2f1d45d12f240296aa8b2",
   "roots": {
-    "CurrentStream": {
-      "model": "CurrentStream",
-      "namespace": "public"
-    },
-    "Space": {
-      "model": "Space",
-      "namespace": "public"
-    },
     "Stream": {
       "model": "Stream",
       "namespace": "public"
@@ -35,10 +27,6 @@
               {
                 "name": "Google",
                 "value": "Google"
-              },
-              {
-                "name": "Credentials",
-                "value": "Credentials"
               }
             ]
           },
@@ -57,216 +45,12 @@
           }
         },
         "models": {
-          "CurrentStream": {
-            "fields": {
-              "id": {
-                "nullable": false,
-                "type": {
-                  "codecId": "pg/text@1",
-                  "kind": "scalar"
-                }
-              },
-              "spaceId": {
-                "nullable": true,
-                "type": {
-                  "codecId": "pg/text@1",
-                  "kind": "scalar"
-                }
-              },
-              "streamId": {
-                "nullable": true,
-                "type": {
-                  "codecId": "pg/text@1",
-                  "kind": "scalar"
-                }
-              },
-              "userId": {
-                "nullable": false,
-                "type": {
-                  "codecId": "pg/text@1",
-                  "kind": "scalar"
-                }
-              }
-            },
-            "relations": {
-              "space": {
-                "cardinality": "N:1",
-                "nullable": true,
-                "on": {
-                  "localFields": [
-                    "spaceId"
-                  ],
-                  "targetFields": [
-                    "id"
-                  ]
-                },
-                "to": {
-                  "model": "Space",
-                  "namespace": "public"
-                }
-              },
-              "stream": {
-                "cardinality": "N:1",
-                "nullable": true,
-                "on": {
-                  "localFields": [
-                    "streamId"
-                  ],
-                  "targetFields": [
-                    "id"
-                  ]
-                },
-                "to": {
-                  "model": "Stream",
-                  "namespace": "public"
-                }
-              }
-            },
-            "storage": {
-              "fields": {
-                "id": {
-                  "column": "id"
-                },
-                "spaceId": {
-                  "column": "spaceId"
-                },
-                "streamId": {
-                  "column": "streamId"
-                },
-                "userId": {
-                  "column": "userId"
-                }
-              },
-              "namespaceId": "public",
-              "table": "CurrentStream"
-            }
-          },
-          "Space": {
-            "fields": {
-              "hostId": {
-                "nullable": false,
-                "type": {
-                  "codecId": "pg/text@1",
-                  "kind": "scalar"
-                }
-              },
-              "id": {
-                "nullable": false,
-                "type": {
-                  "codecId": "pg/text@1",
-                  "kind": "scalar"
-                }
-              },
-              "isActive": {
-                "nullable": false,
-                "type": {
-                  "codecId": "pg/bool@1",
-                  "kind": "scalar"
-                }
-              },
-              "name": {
-                "nullable": false,
-                "type": {
-                  "codecId": "pg/text@1",
-                  "kind": "scalar"
-                }
-              }
-            },
-            "relations": {
-              "currentStream": {
-                "cardinality": "1:1",
-                "nullable": true,
-                "on": {
-                  "localFields": [
-                    "id"
-                  ],
-                  "targetFields": [
-                    "spaceId"
-                  ]
-                },
-                "to": {
-                  "model": "CurrentStream",
-                  "namespace": "public"
-                }
-              },
-              "host": {
-                "cardinality": "N:1",
-                "nullable": false,
-                "on": {
-                  "localFields": [
-                    "hostId"
-                  ],
-                  "targetFields": [
-                    "id"
-                  ]
-                },
-                "to": {
-                  "model": "User",
-                  "namespace": "public"
-                }
-              },
-              "streams": {
-                "cardinality": "1:N",
-                "on": {
-                  "localFields": [
-                    "id"
-                  ],
-                  "targetFields": [
-                    "spaceId"
-                  ]
-                },
-                "to": {
-                  "model": "Stream",
-                  "namespace": "public"
-                }
-              }
-            },
-            "storage": {
-              "fields": {
-                "hostId": {
-                  "column": "hostId"
-                },
-                "id": {
-                  "column": "id"
-                },
-                "isActive": {
-                  "column": "isActive"
-                },
-                "name": {
-                  "column": "name"
-                }
-              },
-              "namespaceId": "public",
-              "table": "Space"
-            }
-          },
           "Stream": {
             "fields": {
               "active": {
                 "nullable": false,
                 "type": {
                   "codecId": "pg/bool@1",
-                  "kind": "scalar"
-                }
-              },
-              "addedBy": {
-                "nullable": false,
-                "type": {
-                  "codecId": "pg/text@1",
-                  "kind": "scalar"
-                }
-              },
-              "bigImg": {
-                "nullable": false,
-                "type": {
-                  "codecId": "pg/text@1",
-                  "kind": "scalar"
-                }
-              },
-              "createAt": {
-                "nullable": false,
-                "type": {
-                  "codecId": "pg/timestamptz-temporal@1",
                   "kind": "scalar"
                 }
               },
@@ -278,41 +62,6 @@
                 }
               },
               "id": {
-                "nullable": false,
-                "type": {
-                  "codecId": "pg/text@1",
-                  "kind": "scalar"
-                }
-              },
-              "played": {
-                "nullable": false,
-                "type": {
-                  "codecId": "pg/bool@1",
-                  "kind": "scalar"
-                }
-              },
-              "playedTs": {
-                "nullable": true,
-                "type": {
-                  "codecId": "pg/timestamptz-temporal@1",
-                  "kind": "scalar"
-                }
-              },
-              "smallImg": {
-                "nullable": false,
-                "type": {
-                  "codecId": "pg/text@1",
-                  "kind": "scalar"
-                }
-              },
-              "spaceId": {
-                "nullable": true,
-                "type": {
-                  "codecId": "pg/text@1",
-                  "kind": "scalar"
-                }
-              },
-              "title": {
                 "nullable": false,
                 "type": {
                   "codecId": "pg/text@1",
@@ -348,54 +97,6 @@
               }
             },
             "relations": {
-              "addedByUser": {
-                "cardinality": "N:1",
-                "nullable": false,
-                "on": {
-                  "localFields": [
-                    "addedBy"
-                  ],
-                  "targetFields": [
-                    "id"
-                  ]
-                },
-                "to": {
-                  "model": "User",
-                  "namespace": "public"
-                }
-              },
-              "currentStream": {
-                "cardinality": "1:1",
-                "nullable": true,
-                "on": {
-                  "localFields": [
-                    "id"
-                  ],
-                  "targetFields": [
-                    "streamId"
-                  ]
-                },
-                "to": {
-                  "model": "CurrentStream",
-                  "namespace": "public"
-                }
-              },
-              "space": {
-                "cardinality": "N:1",
-                "nullable": true,
-                "on": {
-                  "localFields": [
-                    "spaceId"
-                  ],
-                  "targetFields": [
-                    "id"
-                  ]
-                },
-                "to": {
-                  "model": "Space",
-                  "namespace": "public"
-                }
-              },
               "upvotes": {
                 "cardinality": "1:N",
                 "on": {
@@ -433,35 +134,11 @@
                 "active": {
                   "column": "active"
                 },
-                "addedBy": {
-                  "column": "addedBy"
-                },
-                "bigImg": {
-                  "column": "bigImg"
-                },
-                "createAt": {
-                  "column": "createAt"
-                },
                 "extractedId": {
                   "column": "extractedId"
                 },
                 "id": {
                   "column": "id"
-                },
-                "played": {
-                  "column": "played"
-                },
-                "playedTs": {
-                  "column": "playedTs"
-                },
-                "smallImg": {
-                  "column": "smallImg"
-                },
-                "spaceId": {
-                  "column": "spaceId"
-                },
-                "title": {
-                  "column": "title"
                 },
                 "type": {
                   "column": "type"
@@ -553,6 +230,13 @@
           },
           "User": {
             "fields": {
+              "createdAt": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/timestamptz-temporal@1",
+                  "kind": "scalar"
+                }
+              },
               "email": {
                 "nullable": false,
                 "type": {
@@ -567,15 +251,8 @@
                   "kind": "scalar"
                 }
               },
-              "name": {
-                "nullable": true,
-                "type": {
-                  "codecId": "pg/text@1",
-                  "kind": "scalar"
-                }
-              },
               "password": {
-                "nullable": true,
+                "nullable": false,
                 "type": {
                   "codecId": "pg/text@1",
                   "kind": "scalar"
@@ -596,36 +273,6 @@
               }
             },
             "relations": {
-              "addedStreams": {
-                "cardinality": "1:N",
-                "on": {
-                  "localFields": [
-                    "id"
-                  ],
-                  "targetFields": [
-                    "addedBy"
-                  ]
-                },
-                "to": {
-                  "model": "Stream",
-                  "namespace": "public"
-                }
-              },
-              "hostedSpaces": {
-                "cardinality": "1:N",
-                "on": {
-                  "localFields": [
-                    "id"
-                  ],
-                  "targetFields": [
-                    "hostId"
-                  ]
-                },
-                "to": {
-                  "model": "Space",
-                  "namespace": "public"
-                }
-              },
               "streams": {
                 "cardinality": "1:N",
                 "on": {
@@ -659,14 +306,14 @@
             },
             "storage": {
               "fields": {
+                "createdAt": {
+                  "column": "createdAt"
+                },
                 "email": {
                   "column": "email"
                 },
                 "id": {
                   "column": "id"
-                },
-                "name": {
-                  "column": "name"
                 },
                 "password": {
                   "column": "password"
@@ -688,158 +335,6 @@
       "public": {
         "entries": {
           "table": {
-            "CurrentStream": {
-              "columns": {
-                "id": {
-                  "codecId": "pg/text@1",
-                  "dataType": "pg/text",
-                  "nullable": false
-                },
-                "spaceId": {
-                  "codecId": "pg/text@1",
-                  "dataType": "pg/text",
-                  "nullable": true
-                },
-                "streamId": {
-                  "codecId": "pg/text@1",
-                  "dataType": "pg/text",
-                  "nullable": true
-                },
-                "userId": {
-                  "codecId": "pg/text@1",
-                  "dataType": "pg/text",
-                  "nullable": false
-                }
-              },
-              "foreignKeys": [
-                {
-                  "index": {
-                    "unique": [
-                      "streamId"
-                    ]
-                  },
-                  "source": {
-                    "columns": [
-                      "streamId"
-                    ],
-                    "namespaceId": "public",
-                    "tableName": "CurrentStream"
-                  },
-                  "target": {
-                    "columns": [
-                      "id"
-                    ],
-                    "namespaceId": "public",
-                    "tableName": "Stream"
-                  }
-                },
-                {
-                  "index": {
-                    "unique": [
-                      "spaceId"
-                    ]
-                  },
-                  "onDelete": "cascade",
-                  "source": {
-                    "columns": [
-                      "spaceId"
-                    ],
-                    "namespaceId": "public",
-                    "tableName": "CurrentStream"
-                  },
-                  "target": {
-                    "columns": [
-                      "id"
-                    ],
-                    "namespaceId": "public",
-                    "tableName": "Space"
-                  }
-                }
-              ],
-              "indexes": [],
-              "primaryKey": {
-                "columns": [
-                  "id"
-                ]
-              },
-              "uniques": [
-                {
-                  "columns": [
-                    "streamId"
-                  ]
-                },
-                {
-                  "columns": [
-                    "spaceId"
-                  ]
-                }
-              ]
-            },
-            "Space": {
-              "columns": {
-                "hostId": {
-                  "codecId": "pg/text@1",
-                  "dataType": "pg/text",
-                  "nullable": false
-                },
-                "id": {
-                  "codecId": "pg/text@1",
-                  "dataType": "pg/text",
-                  "nullable": false
-                },
-                "isActive": {
-                  "codecId": "pg/bool@1",
-                  "dataType": "pg/bool",
-                  "default": {
-                    "kind": "literal",
-                    "value": true
-                  },
-                  "nullable": false
-                },
-                "name": {
-                  "codecId": "pg/text@1",
-                  "dataType": "pg/text",
-                  "nullable": false
-                }
-              },
-              "foreignKeys": [
-                {
-                  "index": {
-                    "name": "Space_hostId_idx_05205577"
-                  },
-                  "source": {
-                    "columns": [
-                      "hostId"
-                    ],
-                    "namespaceId": "public",
-                    "tableName": "Space"
-                  },
-                  "target": {
-                    "columns": [
-                      "id"
-                    ],
-                    "namespaceId": "public",
-                    "tableName": "User"
-                  }
-                }
-              ],
-              "indexes": [
-                {
-                  "columns": [
-                    "hostId"
-                  ],
-                  "name": "Space_hostId_idx_05205577",
-                  "prefix": "Space_hostId_idx",
-                  "unique": false
-                }
-              ],
-              "primaryKey": {
-                "columns": [
-                  "id"
-                ]
-              },
-              "uniques": []
-            },
             "Stream": {
               "checks": [
                 {
@@ -858,29 +353,6 @@
                   },
                   "nullable": false
                 },
-                "addedBy": {
-                  "codecId": "pg/text@1",
-                  "dataType": "pg/text",
-                  "nullable": false
-                },
-                "bigImg": {
-                  "codecId": "pg/text@1",
-                  "dataType": "pg/text",
-                  "default": {
-                    "kind": "literal",
-                    "value": ""
-                  },
-                  "nullable": false
-                },
-                "createAt": {
-                  "codecId": "pg/timestamptz-temporal@1",
-                  "dataType": "pg/timestamptz",
-                  "default": {
-                    "expression": "now()",
-                    "kind": "function"
-                  },
-                  "nullable": false
-                },
                 "extractedId": {
                   "codecId": "pg/text@1",
                   "dataType": "pg/text",
@@ -889,43 +361,6 @@
                 "id": {
                   "codecId": "pg/text@1",
                   "dataType": "pg/text",
-                  "nullable": false
-                },
-                "played": {
-                  "codecId": "pg/bool@1",
-                  "dataType": "pg/bool",
-                  "default": {
-                    "kind": "literal",
-                    "value": false
-                  },
-                  "nullable": false
-                },
-                "playedTs": {
-                  "codecId": "pg/timestamptz-temporal@1",
-                  "dataType": "pg/timestamptz",
-                  "nullable": true
-                },
-                "smallImg": {
-                  "codecId": "pg/text@1",
-                  "dataType": "pg/text",
-                  "default": {
-                    "kind": "literal",
-                    "value": ""
-                  },
-                  "nullable": false
-                },
-                "spaceId": {
-                  "codecId": "pg/text@1",
-                  "dataType": "pg/text",
-                  "nullable": true
-                },
-                "title": {
-                  "codecId": "pg/text@1",
-                  "dataType": "pg/text",
-                  "default": {
-                    "kind": "literal",
-                    "value": ""
-                  },
                   "nullable": false
                 },
                 "type": {
@@ -969,64 +404,9 @@
                     "namespaceId": "public",
                     "tableName": "User"
                   }
-                },
-                {
-                  "index": {
-                    "name": "Stream_addedBy_idx_2b119622"
-                  },
-                  "source": {
-                    "columns": [
-                      "addedBy"
-                    ],
-                    "namespaceId": "public",
-                    "tableName": "Stream"
-                  },
-                  "target": {
-                    "columns": [
-                      "id"
-                    ],
-                    "namespaceId": "public",
-                    "tableName": "User"
-                  }
-                },
-                {
-                  "index": {
-                    "name": "Stream_spaceId_idx_bb21015f"
-                  },
-                  "onDelete": "cascade",
-                  "source": {
-                    "columns": [
-                      "spaceId"
-                    ],
-                    "namespaceId": "public",
-                    "tableName": "Stream"
-                  },
-                  "target": {
-                    "columns": [
-                      "id"
-                    ],
-                    "namespaceId": "public",
-                    "tableName": "Space"
-                  }
                 }
               ],
               "indexes": [
-                {
-                  "columns": [
-                    "addedBy"
-                  ],
-                  "name": "Stream_addedBy_idx_2b119622",
-                  "prefix": "Stream_addedBy_idx",
-                  "unique": false
-                },
-                {
-                  "columns": [
-                    "spaceId"
-                  ],
-                  "name": "Stream_spaceId_idx_bb21015f",
-                  "prefix": "Stream_spaceId_idx",
-                  "unique": false
-                },
                 {
                   "columns": [
                     "userId"
@@ -1085,7 +465,6 @@
                   "index": {
                     "name": "Upvote_streamId_idx_1373138e"
                   },
-                  "onDelete": "cascade",
                   "source": {
                     "columns": [
                       "streamId"
@@ -1137,12 +516,21 @@
             "User": {
               "checks": [
                 {
-                  "expression": "\"provider\" IN ('Google', 'Credentials')",
-                  "name": "User_provider_check_fca5eb83",
+                  "expression": "\"provider\" IN ('Google')",
+                  "name": "User_provider_check_a8bf08f3",
                   "prefix": "User_provider_check"
                 }
               ],
               "columns": {
+                "createdAt": {
+                  "codecId": "pg/timestamptz-temporal@1",
+                  "dataType": "pg/timestamptz",
+                  "default": {
+                    "expression": "now()",
+                    "kind": "function"
+                  },
+                  "nullable": false
+                },
                 "email": {
                   "codecId": "pg/text@1",
                   "dataType": "pg/text",
@@ -1153,15 +541,10 @@
                   "dataType": "pg/text",
                   "nullable": false
                 },
-                "name": {
-                  "codecId": "pg/text@1",
-                  "dataType": "pg/text",
-                  "nullable": true
-                },
                 "password": {
                   "codecId": "pg/text@1",
                   "dataType": "pg/text",
-                  "nullable": true
+                  "nullable": false
                 },
                 "provider": {
                   "codecId": "pg/text@1",
@@ -1195,8 +578,7 @@
             "Provider": {
               "kind": "valueSet",
               "values": [
-                "Google",
-                "Credentials"
+                "Google"
               ]
             },
             "StreamType": {
@@ -1212,34 +594,12 @@
         "kind": "postgres-schema"
       }
     },
-    "storageHash": "84b24de5666a6a3036ed2ac661d638d9b14f2e4fc4bc4c9f37c7e91dcd1a9c47"
+    "storageHash": "060a1fa90aba09e3fb3f04b48b6366fd46d7ccc12f54535f11f2205d40e5126e"
   },
   "execution": {
-    "executionHash": "2e24962f7328a854844a5fae9b9e01dc41426c3dfb78cac516e09e8877c60a23",
+    "executionHash": "ba8d5502c5c2d5c4044136dfdb1b5f23ab1c5f8cd4a5b2c8e0128a22083dd279",
     "mutations": {
       "defaults": [
-        {
-          "onCreate": {
-            "id": "uuidv4",
-            "kind": "generator"
-          },
-          "ref": {
-            "entry": "CurrentStream",
-            "field": "id",
-            "namespace": "public"
-          }
-        },
-        {
-          "onCreate": {
-            "id": "uuidv4",
-            "kind": "generator"
-          },
-          "ref": {
-            "entry": "Space",
-            "field": "id",
-            "namespace": "public"
-          }
-        },
         {
           "onCreate": {
             "id": "uuidv4",
